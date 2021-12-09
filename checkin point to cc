@@ -1,0 +1,10 @@
+{% assign city_name = "" %}
+
+{% for privilege in guest.access_privileges %}
+    {% if privilege.accesspoint.traits.is_city == "true" %}
+        {% assign city_name = privilege.accesspoint.name %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{{ city_name }}
