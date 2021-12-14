@@ -1,0 +1,18 @@
+{% assign show = "" %}
+
+{% if guest.linked_guests.size == 0 %}
+
+  {% assign show = "false" %}
+  
+{% else %}
+
+  {% for lg in guest.linked_guests %}
+    {% if lg.guest_metadata.show %}
+      {% assign show = "true" %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  
+{% endif %}
+
+{{ show }}
