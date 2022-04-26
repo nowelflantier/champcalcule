@@ -1,0 +1,3 @@
+{% for thematic in guest.thematics %}
+{% if thematic.name contains "Handicap" %}true{% endif %}
+{% endfor %}
